@@ -81,7 +81,7 @@ alias lsd='gls -l | grep "^d"'
 
 # `cat` with beautiful colors. requires Pygments installed.
 # sudo easy_install -U Pygments
-alias c='pygmentize -O style=monokai -f console256 -g'
+alias pygment='pygmentize -O style=monokai -f console256 -g'
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
@@ -190,7 +190,7 @@ alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && k
 alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
 
 # zshrc config
-alias zshrc="${EDITOR} ${$(cd -P $(dirname $0) && cd ..; pwd -P)}"
+# alias zshrc="${EDITOR} ${$(cd -P $(dirname $0) && cd ..; pwd -P)}"
 alias reload="source ~/.zshrc && echo 'Shell config reloaded from ~/.zshrc'"
 
 # zsh.local config

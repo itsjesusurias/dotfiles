@@ -137,7 +137,6 @@ done
 SCRIPT_DIR="$(cd "$(dirname "$0")"; pwd -P)"
 DOTFILES_DIR="$(dirname "$SCRIPT_DIR")"
 
-
 dir=~/dotfiles                        # dotfiles directory
 dir_backup=~/dotfiles_old             # old dotfiles backup directory
 
@@ -161,15 +160,12 @@ echo "done"
 #
 
 
-# Atom editor settings
-echo -n "Copying Atom settings.."
-mv -f ~/.atom ~/dotfiles_old/
-ln -s $HOME/dotfiles/atom ~/.atom
+# vscode editor settings
+echo -n "Copying Vscode settings.."
+ln -s $HOME/dotfiles/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
 echo "done"
 
-
 declare -a FILES_TO_SYMLINK=(
-
   'shell/shell_aliases'
   'shell/shell_config'
   'shell/shell_exports'
@@ -183,11 +179,9 @@ declare -a FILES_TO_SYMLINK=(
   'shell/gemrc'
   'shell/inputrc'
   'shell/screenrc'
-
   'git/gitattributes'
   'git/gitconfig'
   'git/gitignore'
-
 )
 
 # FILES_TO_SYMLINK="$FILES_TO_SYMLINK .vim bin" # add in vim and the binaries
@@ -237,15 +231,10 @@ main() {
   ln -fs $HOME/dotfiles/bin $HOME
 
   declare -a BINARIES=(
-    'batcharge.py'
     'crlf'
-    'dups'
     'git-delete-merged-branches'
     'nyan'
-    'passive'
-    'proofread'
     'ssh-key'
-    'weasel'
   )
 
   for i in ${BINARIES[@]}; do
@@ -301,36 +290,18 @@ install_zsh () {
   fi
 }
 
-# Package managers & packages
+###############################################################################
+# installing nvm                                                              #
+###############################################################################
+. "$DOTFILES_DIR/install/nvm.sh"
 
-# . "$DOTFILES_DIR/install/brew.sh"
-# . "$DOTFILES_DIR/install/npm.sh"
-
-# if [ "$(uname)" == "Darwin" ]; then
-    # . "$DOTFILES_DIR/install/brew-cask.sh"
-# fi
+###############################################################################
+# vscode extensions                                                           #
+###############################################################################
+. "$DOTFILES_DIR/vscode/extensions.sh"
 
 main
 # install_zsh
-
-###############################################################################
-# Atom                                                                        #
-###############################################################################
-
-# Copy over Atom configs
-#cp -r atom/packages.list $HOME/.atom
-
-# Install community packages
-#apm list --installed --bare - get a list of installed packages
-#apm install --packages-file $HOME/.atom/packages.list
-
-###############################################################################
-# Zsh                                                                         #
-###############################################################################
-
-# Install Zsh settings
-ln -s ~/dotfiles/zsh/themes/nick.zsh-theme $HOME/.oh-my-zsh/themes
-
 
 ###############################################################################
 # Terminal & iTerm 2                                                          #
@@ -339,11 +310,35 @@ ln -s ~/dotfiles/zsh/themes/nick.zsh-theme $HOME/.oh-my-zsh/themes
 # Only use UTF-8 in Terminal.app
 defaults write com.apple.terminal StringEncodings -array 4
 
-# Install the Solarized Dark theme for iTerm
-open "${HOME}/dotfiles/iterm/themes/Solarized Dark.itermcolors"
-
-# Don’t display the annoying prompt when quitting iTerm
-defaults write com.googlecode.iterm2 PromptOnQuit -bool false
-
 # Reload zsh settings
 source ~/.zshrc
+
+###############################################################################
+# Node                                                                        #
+###############################################################################
+
+. "$DOTFILES_DIR/install/npm.sh"
+
+###############################################################################
+# Rbenv                                                                       #
+###############################################################################
+rbenv install 2.5.1
+rbenv global 2.5.1
+rbenv local 2.5.1
+rbenv rehash
+
+###############################################################################
+# Directories for dev                                                         #
+###############################################################################
+mkdir ~/.workspace
+mkdir ~/.workspace/ruby
+mkdir ~/.workspace/python
+mkdir ~/.workspace/javascript
+mkdir ~/.workspace/crystal
+mkdir ~/.workspace/other
+
+###############################################################################
+# SSH KEY                                                                     #
+###############################################################################
+
+. "$DOTFILES_DIR/bin/ssh_key"

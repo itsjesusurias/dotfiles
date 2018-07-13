@@ -12,10 +12,6 @@ then
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
-brew tap homebrew/versions
-brew tap homebrew/dupes
-brew tap Goles/battery
-
 # Make sure we’re using the latest Homebrew
 brew update
 
@@ -44,24 +40,24 @@ brew upgrade --all
 # which version I'm using.
 
 apps=(
-    rvm
+    rbenv
     nvm
+    ruby-build
+    crystal-lang
     mongodb
+    redis
+    memcached
+    nginx
     bash-completion2
     coreutils
     moreutils
     findutils
     ffmpeg
-    fortune
-    ponysay
     git
     git-extras
     hub
     gnu-sed --with-default-names
     grep --with-default-names
-    homebrew/completions/brew-cask-completion
-    homebrew/dupes/grep
-    homebrew/dupes/openssh
     mtr
     autojump
     imagemagick --with-webp
@@ -72,6 +68,7 @@ apps=(
     ffmpeg --with-libvpx
     wget
     wifi-password
+    diff-so-fancy
 )
 
 brew install "${apps[@]}"

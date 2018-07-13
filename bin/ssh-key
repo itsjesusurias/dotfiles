@@ -4,7 +4,7 @@
 
 file="$HOME/.ssh/id_rsa.pub"
 if [ ! -f "$file" ]; then
-  ssh-keygen -t rsa
+  ssh-keygen -t rsa -C "itsjesusurias@gmail.com"
 fi
 
 cat "$file"
