@@ -47,7 +47,6 @@ apps=(
     mongodb
     redis
     memcached
-    nginx
     bash-completion2
     coreutils
     moreutils
@@ -69,9 +68,13 @@ apps=(
     wget
     wifi-password
     diff-so-fancy
+    couchdb
+    gd
+    mysql
+    qt@5.5
 )
 
 brew install "${apps[@]}"
-
+brew install nginx-full --with-passenger --with-image-filter
 # Remove outdated versions from the cellar
 brew cleanup

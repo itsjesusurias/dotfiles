@@ -28,6 +28,7 @@ apps=(
     qlimagesize
     webpquicklook
     suspicious-package
+    alfred
 )
 
 brew cask install "${apps[@]}"
