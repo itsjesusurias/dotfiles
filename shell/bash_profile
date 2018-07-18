@@ -198,6 +198,8 @@ alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && 
 # zshrc config
 alias reload="source ~/.zshrc && echo 'Shell config reloaded from ~/.zshrc'"
 
+alias code="/usr/local/bin/code"
+
 # zsh.local config
 
 # Update installed Ruby gems, Homebrew, npm, and their installed packages
@@ -213,6 +215,11 @@ alias reload-bash="exec $SHELL -l"
 alias workspace="cd ~/.workspace"
 ulimit -n 2048
 
+#load nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
+
