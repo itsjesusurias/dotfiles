@@ -29,6 +29,7 @@ apps=(
     webpquicklook
     suspicious-package
     alfred
+    beardedspice
 )
 
 brew cask install "${apps[@]}"

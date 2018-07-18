@@ -345,4 +345,4 @@ mkdir ~/.workspace/other
 # SSH KEY                                                                     #
 ###############################################################################
 
-. "$DOTFILES_DIR/bin/ssh_key"
+. "$DOTFILES_DIR/bin/ssh-key"
