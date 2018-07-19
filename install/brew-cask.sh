@@ -30,6 +30,7 @@ apps=(
     suspicious-package
     alfred
     beardedspice
+    rocket
 )
 
 brew cask install "${apps[@]}"

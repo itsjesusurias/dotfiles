@@ -72,10 +72,9 @@ apps=(
     gd
     mysql
     qt@5.5
+    yarn
 )
 
 brew install "${apps[@]}"
-brew tap denji/nginx
-brew install nginx-full --with-passenger --with-image-filter
 # Remove outdated versions from the cellar
 brew cleanup

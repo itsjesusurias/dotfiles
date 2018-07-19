@@ -213,6 +213,8 @@ done
 
 alias reload-bash="exec $SHELL -l"
 alias workspace="cd ~/.workspace"
+alias start-webpack="./bin/webpack --watch --progress"
+alias nginx="sudo /opt/nginx/sbin/nginx"
 ulimit -n 2048
 
 #load nvm
@@ -223,3 +225,5 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
+export PATH="$(brew --prefix qt@5.5)/bin:$PATH"
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
