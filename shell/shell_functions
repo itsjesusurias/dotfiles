@@ -158,3 +158,21 @@ code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCodeInsiders" --args $*;
 shellswitch () {
   chsh -s $(brew --prefix)/bin/$1
 }
+
+function urlencode() {
+  local LANG=C
+  for ((i=0;i<${#1};i++)); do
+    if [[ ${1:$i:1} =~ ^[a-zA-Z0-9\.\~\_\-]$ ]]; then
+      printf "${1:$i:1}"
+      else
+      printf '%%%02X' "'${1:$i:1}"
+    fi
+  done
+}
+
+urldecode() {
+    # urldecode <string>
+
+    local url_encoded="${1//+/ }"
+    printf '%b' "${url_encoded//%/\\x}"
+}

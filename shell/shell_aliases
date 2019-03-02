@@ -148,7 +148,7 @@ alias sniff="sudo ngrep -W byline -d 'en0' -t '^(GET|POST) ' 'tcp and port 80'"
 alias httpdump="sudo tcpdump -i en0 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
 
 # Enhanced WHOIS lookups
-alias whois="whois -h whois-servers.net"
+#alias whois="whois -h whois-servers.net"
 
 # Download file and save it with filename of remote file
 alias get="curl -O -L"
