@@ -4,7 +4,8 @@
 brew tap caskroom/cask
 brew install brew-cask
 brew tap caskroom/versions
-brew tap homebrew/cask-fonts
+brew tap caskroom/fonts
+brew tap caskroom/cask
 
 # Install packages
 apps=(
@@ -29,8 +30,7 @@ apps=(
     webpquicklook
     suspicious-package
     alfred
-    beardedspice
-    rocket
+    font-fira-code
+    spectacle
 )
-
 brew cask install "${apps[@]}"

@@ -1,22 +1,19 @@
 {
-    "editor.tabSize": 2,
-    "editor.fontSize": 14,
-    "editor.rulers": [80],
-    "files.insertFinalNewline": true,
-    "sublimeTextKeymap.promptV3Features": true,
-    "editor.multiCursorModifier": "ctrlCmd",
-    "editor.snippetSuggestions": "top",
-    "editor.formatOnPaste": true,
-    "workbench.colorTheme": "Atom One Dark",
+    "editor.tabSize"                    : 2,
+    "editor.rulers"                     : [80],
+    "files.insertFinalNewline"          : true,
+    "editor.multiCursorModifier"        : "ctrlCmd",
+    "editor.snippetSuggestions"         : "top",
+    "editor.formatOnPaste"              : true,
     "ruby.lint": {
         "rubocop": {
-            "lint": true,
+            "lint" : true,
             "rails": true
         }
     },
     "workbench.activityBar.visible": true,
     "telemetry.enableCrashReporter": false,
-    "files.trimTrailingWhitespace": true,
+    "files.trimTrailingWhitespace" : true,
     "search.exclude": {
         "**/.git": true,
         "**/node_modules": true,
@@ -27,12 +24,25 @@
         "**/public/uploads": true
     },
     "files.exclude": {
-        "**/.git": true,
-        "**/.svn": true,
-        "**/.hg": true,
-        "**/CVS": true,
-        "**/.DS_Store": true,
-        "**/log": true
+        "**/erl_crash.dump": true,
+        "**/node_modules"  : true,
+        "**/.crystal"      : true,
+        "**/.github"       : true,
+        "**/.git"          : true,
+        "**/.svn"          : true,
+        "**/.hg"           : true,
+        "**/CVS"           : true,
+        "**/.DS_Store"     : true,
+        "**/log"           : true
     },
-    "window.zoomLevel": 0
+    "window.zoomLevel"    : 0,
+    "editor.fontLigatures": true,
+    "editor.fontSize"     : 14,
+    "editor.fontFamily"   : "FiraCode-Retina, Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontWeight"         : "400",
+    "editor.cursorStyle"        : "line",
+    "editor.renderWhitespace": "all",
+    "workbench.colorTheme": "One Dark Pro Vivid",
+    "workbench.iconTheme": "Monokai Pro (Filter Spectrum) Icons",
+    "sublimeTextKeymap.promptV3Features": true
 }
