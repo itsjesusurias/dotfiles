@@ -26,3 +26,7 @@ npm-debug.log
 
 # IDEs stuff
 .idea
+
+# Ignore erl crash
+
+erl_crash.dump
