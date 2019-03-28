@@ -43,7 +43,6 @@
     "editor.cursorStyle"        : "line",
     "editor.renderWhitespace": "all",
     "workbench.colorTheme": "One Dark Pro Vivid",
-    "workbench.iconTheme": "Monokai Pro (Filter Spectrum) Icons",
     "sublimeTextKeymap.promptV3Features": true,
     "workbench.statusBar.feedback.visible": false
 }
