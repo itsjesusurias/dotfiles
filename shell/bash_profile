@@ -14,5 +14,7 @@ export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export PATH="$HOME/.crenv/bin:$PATH"
 eval "$(crenv init -)"
 
+. $(brew --prefix asdf)/asdf.sh
+. $(brew --prefix asdf)/etc/bash_completion.d/asdf.bash
+
 alias code="/usr/local/bin/code"
-export PATH="/usr/local/opt/qt@5.5/bin:$PATH"
