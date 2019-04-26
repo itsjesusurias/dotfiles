@@ -158,7 +158,10 @@ echo "done"
 #
 # Actual symlink stuff
 #
-
+# vscode editor settings
+echo -n "Copying tmux settings.."
+ln -s $HOME/dotfiles/links/.tmux.conf ~/.tmux.conf
+echo "done"
 
 # vscode editor settings
 echo -n "Copying Vscode settings.."
@@ -233,7 +236,6 @@ main() {
   declare -a BINARIES=(
     'crlf'
     'git-delete-merged-branches'
-    'nyan'
     'ssh-key'
   )
 
@@ -280,11 +282,6 @@ install_zsh () {
 }
 
 ###############################################################################
-# installing nvm                                                              #
-###############################################################################
-. "$DOTFILES_DIR/install/nvm.sh"
-
-###############################################################################
 # vscode extensions                                                           #
 ###############################################################################
 . "$DOTFILES_DIR/vscode/extensions.sh"
@@ -306,19 +303,15 @@ defaults write com.apple.terminal StringEncodings -array 4
 # Reload zsh settings
 source ~/.zshrc
 
+asdf plugin-add ruby
+asdf plugin-add elixir
+
 ###############################################################################
 # Node                                                                        #
 ###############################################################################
 
 . "$DOTFILES_DIR/install/npm.sh"
 
-###############################################################################
-# Rbenv                                                                       #
-###############################################################################
-rbenv install 2.5.1
-rbenv global 2.5.1
-rbenv local 2.5.1
-rbenv rehash
 
 ###############################################################################
 # Directories for dev                                                         #

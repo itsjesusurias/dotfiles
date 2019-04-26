@@ -30,3 +30,5 @@ npm-debug.log
 # Ignore erl crash
 
 erl_crash.dump
+
+/config/boot.rb

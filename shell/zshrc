@@ -11,11 +11,9 @@ PATH="/usr/local/mysql/bin:$PATH"
 PATH="/sw/bin/:$PATH"
 PATH="$HOME/dotfiles/bin:$PATH"
 PATH="$HOME/bin:$PATH"
-PATH="$HOME/.rbenv/bin:$PATH"
-PATH="$(brew --prefix ruby)/bin:$PATH"
 PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
-PATH="$(brew --prefix)/share/npm/bin:$PATH"
 PATH="/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin:$PATH"
+PATH="/usr/local/bin:$PATH"
 export PATH
 
 # Set name of the theme to load.

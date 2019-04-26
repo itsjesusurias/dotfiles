@@ -40,10 +40,9 @@ brew upgrade --all
 # which version I'm using.
 
 apps=(
-    rbenv
-    nvm
+    tmux
+    asdf
     ruby-build
-    crystal-lang
     mongodb
     redis
     memcached
@@ -67,7 +66,6 @@ apps=(
     ffmpeg --with-libvpx
     wget
     wifi-password
-    diff-so-fancy
     couchdb
     gd
     mysql
