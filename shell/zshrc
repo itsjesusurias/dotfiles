@@ -11,8 +11,6 @@ PATH="/usr/local/mysql/bin:$PATH"
 PATH="/sw/bin/:$PATH"
 PATH="$HOME/dotfiles/bin:$PATH"
 PATH="$HOME/bin:$PATH"
-PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
-PATH="/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin:$PATH"
 PATH="/usr/local/bin:$PATH"
 export PATH
 
@@ -22,8 +20,6 @@ export PATH
 # time that oh-my-zsh is loaded.
 ZSH_THEME="robbyrussell"
 
-# Z beats cd most of the time
-. ~/z/z.sh
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -52,7 +48,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(fabric brew node npm history git-flow vagrant zsh-syntax-highlighting)
+plugins=(fabric node npm history git-flow vagrant)
 
 # User configuration
 
@@ -61,10 +57,6 @@ for file in $HOME/.{shell_exports,shell_aliases,shell_functions,shell_config,bas
   [ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;
-
-if [ -f `brew --prefix`/etc/bash_completion ]; then
-  . `brew --prefix`/etc/bash_completion
-fi
 
 # Automatically list directory contents on `cd`.
 # auto-ls () {
@@ -78,6 +70,3 @@ source $ZSH/oh-my-zsh.sh
 
 # Source local extra (private) settings specific to machine if it exists
 [ -f ~/.zsh.local ] && source ~/.zsh.local
-
-
-

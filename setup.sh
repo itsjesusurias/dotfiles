@@ -159,14 +159,14 @@ echo "done"
 # Actual symlink stuff
 #
 # vscode editor settings
-echo -n "Copying tmux settings.."
-ln -s $HOME/dotfiles/links/.tmux.conf ~/.tmux.conf
-echo "done"
+# echo -n "Copying tmux settings.."
+# ln -s $HOME/dotfiles/links/.tmux.conf ~/.tmux.conf
+# echo "done"
 
-# vscode editor settings
-echo -n "Copying Vscode settings.."
-ln -s $HOME/dotfiles/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
-echo "done"
+# # vscode editor settings
+# echo -n "Copying Vscode settings.."
+# ln -s $HOME/dotfiles/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
+# echo "done"
 
 declare -a FILES_TO_SYMLINK=(
   'shell/shell_aliases'
@@ -230,22 +230,6 @@ main() {
 
   unset FILES_TO_SYMLINK
 
-  # Copy binaries
-  ln -fs $HOME/dotfiles/bin $HOME
-
-  declare -a BINARIES=(
-    'crlf'
-    'git-delete-merged-branches'
-    'ssh-key'
-  )
-
-  for i in ${BINARIES[@]}; do
-    echo "Changing access permissions for binary script :: ${i##*/}"
-    chmod +rwx $HOME/bin/${i##*/}
-  done
-
-  unset BINARIES
-
 }
 
 install_zsh () {
@@ -272,16 +256,11 @@ install_zsh () {
         sudo apt-get install zsh
         install_zsh
       fi
-    # If the platform is OS X, tell the user to install zsh :)
-    elif [[ $platform == 'Darwin' ]]; then
-      echo "We'll install zsh, then re-run this script!"
-      brew install zsh
-      exit
     fi
   fi
 }
 
-###############################################################################
+##################################brew#############################################
 # vscode extensions                                                           #
 ###############################################################################
 . "$DOTFILES_DIR/vscode/extensions.sh"
@@ -291,37 +270,30 @@ main
 ###############################################################################
 # install_zsh                                                                 #
 ###############################################################################
-install_zsh
-
-###############################################################################
-# Terminal & iTerm 2                                                          #
-###############################################################################
-
-# Only use UTF-8 in Terminal.app
-defaults write com.apple.terminal StringEncodings -array 4
+# install_zsh
 
 # Reload zsh settings
 source ~/.zshrc
 
-asdf plugin-add ruby
-asdf plugin-add elixir
+# asdf plugin-add ruby
+# asdf plugin-add elixir
 
 ###############################################################################
 # Node                                                                        #
 ###############################################################################
 
-. "$DOTFILES_DIR/install/npm.sh"
+# . "$DOTFILES_DIR/install/npm.sh"
 
 
 ###############################################################################
 # Directories for dev                                                         #
 ###############################################################################
-mkdir ~/.workspace
-mkdir ~/.workspace/ruby
-mkdir ~/.workspace/python
-mkdir ~/.workspace/javascript
-mkdir ~/.workspace/crystal
-mkdir ~/.workspace/other
+mkdir -p ~/.workspace
+mkdir -p ~/.workspace/ruby
+mkdir -p ~/.workspace/python
+mkdir -p ~/.workspace/javascript
+mkdir -p ~/.workspace/crystal
+mkdir -p ~/.workspace/other
 
 ###############################################################################
 # SSH KEY                                                                     #

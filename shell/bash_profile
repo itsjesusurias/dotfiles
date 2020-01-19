@@ -3,9 +3,7 @@ ulimit -n 2048
 autoload -Uz compinit
 compinit
 
-. $(brew --prefix asdf)/asdf.sh
-. $(brew --prefix asdf)/etc/bash_completion.d/asdf.bash
-
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 
-alias code="/usr/local/bin/code"
+. $HOME/.asdf/asdf.sh
+. $HOME/.asdf/completions/asdf.bash
