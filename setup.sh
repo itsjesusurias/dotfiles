@@ -165,7 +165,8 @@ echo "done"
 
 # # vscode editor settings
 # echo -n "Copying Vscode settings.."
-# ln -s $HOME/dotfiles/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
+ln -s $DOTFILES_DIR/vscode/settings.json $HOME/.config/Code/User/settings.json
+
 # echo "done"
 
 declare -a FILES_TO_SYMLINK=(
@@ -182,6 +183,7 @@ declare -a FILES_TO_SYMLINK=(
   'shell/gemrc'
   'shell/inputrc'
   'shell/screenrc'
+  'shell/tmux.conf'
   'git/gitattributes'
   'git/gitconfig'
   'git/gitignore'

@@ -1,6 +1,9 @@
 {
     "editor.tabSize"                    : 2,
-    "editor.rulers"                     : [80],
+    "editor.rulers": [
+        72,
+        80
+    ],
     "files.insertFinalNewline"          : true,
     "editor.multiCursorModifier"        : "ctrlCmd",
     "editor.snippetSuggestions"         : "top",
@@ -37,8 +40,8 @@
     },
     "window.zoomLevel"    : 0,
     "editor.fontLigatures": true,
-    "editor.fontSize"     : 14,
-    "editor.fontFamily"   : "FiraCode-Retina, Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontSize"     : 13,
+    "editor.fontFamily"   : "JetBrains Mono, Menlo, Monaco, 'Courier New', monospace",
     "editor.fontWeight"         : "400",
     "editor.cursorStyle"        : "line",
     "editor.renderWhitespace": "all",
