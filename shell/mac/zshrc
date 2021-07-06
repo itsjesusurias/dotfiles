@@ -7,8 +7,12 @@ PATH="/usr/bin:$PATH"
 PATH="/usr/local/sbin:$PATH"
 PATH="/usr/local/git/bin:$PATH"
 PATH="/usr/local/:$PATH"
+PATH="/usr/local/mysql/bin:$PATH"
+PATH="/sw/bin/:$PATH"
 PATH="$HOME/dotfiles/bin:$PATH"
 PATH="$HOME/bin:$PATH"
+PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+PATH="/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin:$PATH"
 PATH="/usr/local/bin:$PATH"
 export PATH
 
@@ -58,6 +62,10 @@ for file in $HOME/.{shell_exports,shell_aliases,shell_functions,shell_config,bas
 done;
 unset file;
 
+if [ -f `brew --prefix`/etc/bash_completion ]; then
+  . `brew --prefix`/etc/bash_completion
+fi
+
 # Automatically list directory contents on `cd`.
 # auto-ls () {
 #   emulate -L zsh;
@@ -65,8 +73,6 @@ unset file;
 #   hash gls >/dev/null 2>&1 && CLICOLOR_FORCE=1 gls -aFh --color --group-directories-first || ls
 # }
 # chpwd_functions=( auto-ls $chpwd_functions )
-
-source $HOME/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 source $ZSH/oh-my-zsh.sh
 

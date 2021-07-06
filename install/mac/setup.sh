@@ -1,29 +1,3 @@
-# Copy paste this file in bit by bit.
-# Don't run it.
-
-echo "Do not run this script in one go. Hit Ctrl-C NOW"
-read -n 1
-
-###############################################################################
-# Backup old machine's dotfiles                                               #
-###############################################################################
-
-mkdir -p ~/migration/home
-cd ~/migration
-
-# then compare brew-list to what's in `brew.sh`
-#   comm <(sort brew-list.txt) <(sort brew.sh-cleaned-up)
-
-# let's hold on to these
-
-mkdir -p ~/migration/home
-cd ~/migration
-
-# iTerm settings.
-  # Prefs, General, Use settings from Folder
-
-# Finder settings
-
 
 ###############################################################################
 # XCode Command Line Tools                                                    #
@@ -66,8 +40,8 @@ fi
 # Homebrew                                                                    #
 ###############################################################################
 
-. $HOME/dotfiles/install/brew.sh
-. $HOME/dotfiles/install/brew-cask.sh
+. $HOME/dotfiles/install/mac/brew.sh
+. $HOME/dotfiles/install/mac/brew-cask.sh
 
 
 ###############################################################################
@@ -97,11 +71,15 @@ sudo easy_install Pygments
 # https://github.com/hjuutilainen/dotfiles/blob/master/bin/osx-user-defaults.sh
 ###############################################################################
 
-$HOME/dotfiles/osx/set-defaults.sh
-
+. $HOME/dotfiles/install/mac/set-defaults.sh
+. $HOME/dotfiles/install/mac/ssd.sh
 
 ###############################################################################
-# Symlinks to link dotfiles into ~/                                           #
+# Terminal & iTerm 2                                                          #
 ###############################################################################
 
-$HOME/dotfiles/setup.sh
+# Only use UTF-8 in Terminal.app
+defaults write com.apple.terminal StringEncodings -array 4
+
+#General setup
+. $HOME/dotfiles/install/general/setup.sh

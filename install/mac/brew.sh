@@ -40,6 +40,7 @@ brew upgrade --all
 # which version I'm using.
 
 apps=(
+    zsh
     tmux
     asdf
     ruby-build

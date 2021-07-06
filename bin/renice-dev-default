@@ -1,1 +1,0 @@
-sudo renice 0 -p $(ps ax | grep -E 'ruby|node|mysqld|redis-server|nginx|couchdb' | grep -v grep | awk '{print $1}' | tr '\n' ' ')
