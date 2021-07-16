@@ -160,15 +160,15 @@ echo "done"
 #
 # vscode editor settings
 echo -n "Copying tmux settings.."
-ln -s $HOME/dotfiles/links/.tmux.conf ~/.tmux.conf
+ln -sf $HOME/dotfiles/links/.tmux.conf ~/.tmux.conf
 echo "done"
 
 # vscode editor settings
 echo -n "Copying Vscode settings.."
 if [ "$(uname)" == "Darwin" ]; then
-  ln -s $HOME/dotfiles/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
+  ln -sf $HOME/dotfiles/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
 elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
-  ln -s $HOME/dotfiles/vscode/settings.json ~/.config/Code/User/settings.json
+  ln -sf $HOME/dotfiles/vscode/settings.json ~/.config/Code/User/settings.json
 fi
 echo "done"
 # files to symlink
@@ -185,7 +185,6 @@ if [ "$(uname)" == "Darwin" ]; then
     'shell/mac/shell_exports'
     'shell/shell_aliases'
     'shell/shell_config'
-    'shell/bash_profile'
     'shell/bashrc'
     'shell/mac/zshrc'
     'shell/curlrc'
@@ -282,7 +281,7 @@ source ~/.zshrc
 
 asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby.git
 asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git
-asdf plugin add nodejs 
+asdf plugin add nodejs
 asdf plugin-add crystal https://github.com/asdf-community/asdf-crystal.git
 
 
@@ -291,10 +290,9 @@ asdf plugin-add crystal https://github.com/asdf-community/asdf-crystal.git
 ###############################################################################
 mkdir ~/.workspace
 mkdir ~/.workspace/ruby
-mkdir ~/.workspace/python
 mkdir ~/.workspace/javascript
 mkdir ~/.workspace/crystal
-mkdir ~/.workspace/other
+mkdir ~/.workspace/elixir
 
 ###############################################################################
 # SSH KEY                                                                     #
